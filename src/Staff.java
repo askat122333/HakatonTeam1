@@ -1,6 +1,13 @@
-public class Staff extends AbstractStaff{
+public class Staff extends AbstractStaff implements Registration{
     private String giftCategory;
-    public Staff(String surName, String name, int age, Role role, String password) {
-        super(surName, name, age, role, password);
+    private String login;
+    public Staff(String surName, String name, int age, Role role) {
+        super(surName, name, age, role);
+
+    }
+
+    @Override
+    public void registration() {
+
     }
 }

@@ -1,26 +1,17 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Data {
-    private static ArrayList<String>data = new ArrayList<>();
-    private static ArrayList<String>passwords;
-
-    public static ArrayList<String> getData() {
-        return data;
-    }
-
-    public static ArrayList<String> getPasswords() {
-        return passwords;
-    }
-
-    public void addInstruction() {
+    private static ArrayList<String> instruction = new ArrayList<>();
+    private static Map<String,String> Staff = new HashMap<>();
+    public static void addInstruction() {
         String text = Admin.addInstructions();
-        data.add(text);
+        instruction.add(text);
     }
-    public void getInstruction() {
+
+    public static void getInstruction() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите номер инструкции (начинается с 0):");
         int count = scanner.nextInt();
-        System.out.println(data.get(count)+"\n");
+        System.out.println(instruction.get(count)+"\n");
     }
 }

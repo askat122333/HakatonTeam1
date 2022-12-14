@@ -3,14 +3,12 @@ public abstract class AbstractStaff{
     private String name;
     private int age;
     private Role role;
-    private String password;
 
-    public AbstractStaff(String surName, String name, int age, Role role, String password) {
+    public AbstractStaff(String surName, String name, int age, Role role) {
         this.surName = surName;
         this.name = name;
         this.age = age;
         this.role = role;
-        this.password = password;
     }
     public AbstractStaff(){}
 
@@ -44,13 +42,5 @@ public abstract class AbstractStaff{
 
     public void setRole(Role role) {
         this.role = role;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }
