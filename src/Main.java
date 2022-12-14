@@ -1,3 +1,6 @@
+import employee.Employee;
+import employee.EmployeeMenu;
+
 import java.util.Scanner;
 
 public class Main {
@@ -20,7 +23,7 @@ public class Main {
                     break;
                 }
             }else if (command == 2) {
-
+                EmployeeMenu.main(new Employee());
             } else if (command == 0) {
                 break;
             }
