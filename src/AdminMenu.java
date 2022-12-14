@@ -26,7 +26,8 @@ public class AdminMenu {
                     Admin.setEndDate();
                     break;
                 case 4:
-
+                    Admin.randomize();
+                    break;
                 case 5:
                     Data.getInstruction();
                     break;

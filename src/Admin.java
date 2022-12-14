@@ -1,8 +1,7 @@
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Admin extends AbstractStaff{
@@ -56,5 +55,34 @@ public class Admin extends AbstractStaff{
     }
     public static void getMaxCost() {
         System.out.println(maxCost);
+    }
+    public static void randomize(){
+
+        int SANTA_NUMBERS = 10;
+
+        List<Integer> santaList = new ArrayList<>();
+        for (int i = 0; i < SANTA_NUMBERS; ) {
+            santaList.add(++i);
+        }
+
+        List<Integer> guests = new ArrayList<>(santaList);
+        Collections.shuffle(guests);
+
+        //в этом цикле проверяем
+        for (int i = 0; i < santaList.size(); i++) {
+            if (santaList.get(i) == guests.get(i)) {
+                if (i + 1 < santaList.size()){
+                    Integer receiver = guests.get(i + 1);
+                    guests.set(i + 1, guests.get(i));
+                    guests.set(i , receiver);
+                }else {
+                    Integer receiver = guests.get(1);
+                    guests.set(1, guests.get(i));
+                    guests.set(i , receiver);
+                }
+            }
+        }
+        for (int j = 0; j < santaList.size(); j++)
+            System.out.println(santaList.get(j) + " gives a gift to -> " + guests.get(j));
     }
 }
