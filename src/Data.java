@@ -1,17 +1,25 @@
+import member.Member;
+
 import java.util.*;
 
 public class Data {
     private static ArrayList<String> instruction = new ArrayList<>();
-    private static Map<String,String> Staff = new HashMap<>();
+    private static Map<String,String> members = new HashMap<>();
     public static void addInstruction() {
         String text = Admin.addInstructions();
         instruction.add(text);
+        System.out.println("Инструкции успешно добавлены!\n");
     }
 
     public static void getInstruction() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите номер инструкции (начинается с 0):");
-        int count = scanner.nextInt();
-        System.out.println(instruction.get(count)+"\n");
+        System.out.println("Инстуркции к игре: ");
+        for (int i = 0; i < instruction.size(); i++) {
+            if (instruction.get(i) != null) {
+                System.out.println(instruction.get(i));
+            }else if(instruction.get(i).isEmpty()){
+                System.out.println("Нет инструкций");
+            }
+
+        }
     }
 }

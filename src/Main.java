@@ -1,5 +1,5 @@
-import employee.Employee;
-import employee.EmployeeMenu;
+import member.Member;
+import member.MemberMenu;
 
 import java.util.Scanner;
 
@@ -7,10 +7,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc  = new Scanner(System.in);
         while (true){
-            System.out.println("Меню для игры в тайного санту\n"+
-                    "1) Войти в как Админ\n"+
-                    "2) Войти как участник\n"+
-                    "0) Выйти");
+            System.out.println("""
+                    ДОБРО ПОЖАЛОВАТЬ В МЕНЮ ИГРЫ "ТАЙНЫЙ САНТА"
+                    –––––––––––––––––––––––––––––––––––––––––––
+                    Пожалуйста, выберите действие:
+                    1) Войти в как Админ
+                    2) Войти как участник
+                    0) Выйти из меню""");
             int command = sc.nextInt();
             if (command == 1) {
                 Admin admin = new Admin();
@@ -23,7 +26,7 @@ public class Main {
                     break;
                 }
             }else if (command == 2) {
-                EmployeeMenu.main(new Employee());
+                MemberMenu.main(new Member());
             } else if (command == 0) {
                 break;
             }

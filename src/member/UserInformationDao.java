@@ -1,8 +1,8 @@
-package employee;
+package member;
 
 public interface UserInformationDao {
 
-    public abstract void regist(Employee employee);
+    public abstract void regist(Member member);
 
     public  abstract void makeANote(String fileName);
 }

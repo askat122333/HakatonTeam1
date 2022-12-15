@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -36,20 +37,21 @@ public class Admin extends AbstractStaff{
         System.out.println("Выберите год:");
         int year = scanner.nextInt();
         System.out.println("Выберите месяц:");
-        int month = scanner.nextInt();
+        String month = scanner.next();
         System.out.println("Выберите день:");
         int day = scanner.nextInt();
-        System.out.println("Выберите час и  минуты:");
-        int hour = scanner.nextInt();
+        System.out.println("Выберите время (час):");
+        int time = scanner.nextInt();
+        System.out.println("Выберите время (минут):");
         int minute = scanner.nextInt();
-      date = LocalDateTime.of(year,month,day,hour,minute);
+      date = LocalDateTime.of(year, Month.valueOf(month),day,time,minute);
     }
     public static void getEndDate() {
         System.out.println(date);
     }
     public static  void setMaxCost() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Установите максимальную стоимость подарка : ");
+        System.out.println("Установите максимальную стоимость подарка: ");
         int count = scanner.nextInt();
         maxCost = count;
     }
@@ -58,8 +60,7 @@ public class Admin extends AbstractStaff{
     }
     public static void randomize(){
 
-        int SANTA_NUMBERS = 10;
-
+        int SANTA_NUMBERS = 6;
         List<Integer> santaList = new ArrayList<>();
         for (int i = 0; i < SANTA_NUMBERS; ) {
             santaList.add(++i);
@@ -68,7 +69,6 @@ public class Admin extends AbstractStaff{
         List<Integer> guests = new ArrayList<>(santaList);
         Collections.shuffle(guests);
 
-        //в этом цикле проверяем
         for (int i = 0; i < santaList.size(); i++) {
             if (santaList.get(i) == guests.get(i)) {
                 if (i + 1 < santaList.size()){

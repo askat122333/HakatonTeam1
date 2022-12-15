@@ -1,10 +1,10 @@
-package employee;
+package member;
 
 import java.util.Scanner;
 
 
-public class EmployeeMenu {
-    public static void main(Employee employee) {
+public class MemberMenu {
+    public static void main(Member member) {
 
 
             UserInformationDao uid = new UserInformationDaoImpl();
@@ -17,10 +17,10 @@ public class EmployeeMenu {
             String name = in.next();
             System.out.println("Введите ваш пароль: ");
             String password = in.next();
-            Employee employee1 = new Employee(name, password);
+            Member member1 = new Member(name, password);
 
 
-            uid.regist(employee1);
+            uid.regist(member1);
 
             uid.makeANote("C:\\java\\loh\\text.txt");
             System.out.println("Регистрация прошла успешно!");
@@ -43,38 +43,38 @@ public class EmployeeMenu {
                 switch (number){
                     case "1":
                         String type1 = "Teхника";
-                        employee1.setType(type1);
+                        member1.setType(type1);
                         System.out.println("Вы выбрали технику");
                         uid.makeANote("C:\\Users\\User\\IdeaProjects\\loh\\text.txt");
 
                         break;
                     case "2":
                         String type2 = "Запоминающиеся";
-                        employee1.setType(type2);
+                        member1.setType(type2);
                         System.out.println("Вы выбрали запоминающиеся подарки");
                         uid.makeANote("C:\\Users\\User\\IdeaProjects\\loh\\text.txt");
                         break;
                     case "3":
                         String type3 = "Книги";
-                        employee1.setType(type3);
+                        member1.setType(type3);
                         System.out.println("Вы выбрали книги");
                         uid.makeANote("C:\\Users\\User\\IdeaProjects\\loh\\text.txt");
                         break;
                     case "4":
                         String type4 = "Цветы";
-                        employee1.setType(type4);
+                        member1.setType(type4);
                         System.out.println("Вы выбрали цветы");
                         uid.makeANote("C:\\Users\\User\\IdeaProjects\\loh\\text.txt");
                         break;
                     case "5":
                         String type5 = "Еда";
-                        employee1.setType(type5);
+                        member1.setType(type5);
                         System.out.println("Вы выбрали вкусную еду");
                         uid.makeANote("C:\\Users\\User\\IdeaProjects\\loh\\text.txt");
                         break;
                     case "6":
                         String type6 = "Игрушки";
-                        employee1.setType(type6);
+                        member1.setType(type6);
                         System.out.println("Вы выбрали игрушки");
                         uid.makeANote("C:\\java\\loh\\text.txt");
                         break;

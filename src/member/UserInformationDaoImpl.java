@@ -1,4 +1,4 @@
-package employee;
+package member;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -6,12 +6,12 @@ import java.util.ArrayList;
 
 public class UserInformationDaoImpl implements UserInformationDao {
 
-    private static final ArrayList<Employee> memberList=new ArrayList<Employee>();
+    private static final ArrayList<Member> memberList=new ArrayList<Member>();
 
 
     @Override
-    public void regist(Employee employee) {
-        memberList.add(employee);
+    public void regist(Member member) {
+        memberList.add(member);
     }
 
 
@@ -30,5 +30,6 @@ public class UserInformationDaoImpl implements UserInformationDao {
                 IOException e) {
             System.out.println(e.getMessage());
         }
+
     }
 }

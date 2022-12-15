@@ -1,21 +1,24 @@
-package employee;
+package member;
 
-public class Employee {
+import javax.management.relation.Role;
+
+public class Member {
     private String name;
     private String password;
 
     private String type;
-    public Employee(){
+    public Member(){
 
     }
 
-    public Employee(String type) {
+    public Member(String type) {
         this.type = type;
     }
 
-    public Employee(String name, String password) {
+    public Member(String name, String password) {
         this.name = name;
         this.password = password;
+
     }
 
     public String getName() {
