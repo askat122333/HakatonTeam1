@@ -1,10 +1,11 @@
 import member.Member;
 import member.MemberMenu;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner sc  = new Scanner(System.in);
         while (true){
             System.out.println("""

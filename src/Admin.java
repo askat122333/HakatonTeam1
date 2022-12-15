@@ -1,15 +1,20 @@
+import member.Member;
+import member.UserInformationDao;
+import member.UserInformationDaoImpl;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
-public class Admin extends AbstractStaff{
+public class Admin extends AbstractStaff {
     private static String login = "Admin1122";
-    private static String adminPassword = "aDmiN12#@";
+    private static String adminPassword = "123";
     private static LocalDateTime date;
     private static int maxCost;
+
     public Admin(String surName, String name, int age, Role role) {
         super(surName, name, age, role);
     }
@@ -32,57 +37,74 @@ public class Admin extends AbstractStaff{
         String text = scanner.nextLine();
         return text;
     }
-    public static  void setEndDate() {
+
+    public static void setEndDate() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Выберите год:");
         int year = scanner.nextInt();
         System.out.println("Выберите месяц:");
-        String month = scanner.next();
+        int month = scanner.nextInt();
         System.out.println("Выберите день:");
         int day = scanner.nextInt();
         System.out.println("Выберите время (час):");
         int time = scanner.nextInt();
         System.out.println("Выберите время (минут):");
         int minute = scanner.nextInt();
-      date = LocalDateTime.of(year, Month.valueOf(month),day,time,minute);
+        date = LocalDateTime.of(year, month,day, time,minute);
     }
+
     public static void getEndDate() {
         System.out.println(date);
     }
-    public static  void setMaxCost() {
+
+    public static void setMaxCost() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Установите максимальную стоимость подарка: ");
         int count = scanner.nextInt();
         maxCost = count;
     }
+
     public static void getMaxCost() {
         System.out.println(maxCost);
     }
-    public static void randomize(){
 
-        int SANTA_NUMBERS = 6;
-        List<Integer> santaList = new ArrayList<>();
-        for (int i = 0; i < SANTA_NUMBERS; ) {
-            santaList.add(++i);
+    public static void randomize() {
+        System.out.println(UserInformationDaoImpl.memberList.toString());
+        var memberList = UserInformationDaoImpl.memberList;
+
+        List<String> employeesNames = new ArrayList<>();
+        for (Member member : memberList) {
+            employeesNames.add(member.getName());
         }
 
-        List<Integer> guests = new ArrayList<>(santaList);
+        List<String> santaList = new ArrayList<>();
+        Map<String, String> names = new HashMap<>();
+        for (int i = 0; i < employeesNames.size(); ++i) {
+            santaList.add((employeesNames.get(i)));
+        }
+
+        List<String> guests = new ArrayList<>(santaList);
         Collections.shuffle(guests);
 
         for (int i = 0; i < santaList.size(); i++) {
             if (santaList.get(i) == guests.get(i)) {
-                if (i + 1 < santaList.size()){
-                    Integer receiver = guests.get(i + 1);
+                if (i + 1 < santaList.size()) {
+                    String receiver = guests.get(i + 1);
                     guests.set(i + 1, guests.get(i));
-                    guests.set(i , receiver);
-                }else {
-                    Integer receiver = guests.get(1);
+                    guests.set(i, receiver);
+                } else {
+                    String receiver = guests.get(1);
                     guests.set(1, guests.get(i));
-                    guests.set(i , receiver);
+                    guests.set(i, receiver);
                 }
             }
         }
         for (int j = 0; j < santaList.size(); j++)
-            System.out.println(santaList.get(j) + " gives a gift to -> " + guests.get(j));
+            names.put(santaList.get(j), guests.get(j));
+        for (Map.Entry<String, String> item : names.entrySet()) {
+            System.out.println(item.getKey() + " дарит подарок -> " + item.getValue());
+            System.out.println();
+        }
     }
 }
+

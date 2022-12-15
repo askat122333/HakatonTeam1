@@ -48,10 +48,9 @@ public class Member {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+        return "Участник[" +
+                "Имя – " + name +
+                ", Категория желаемого подарка – " + type +
+                "]\n";
     }
 }

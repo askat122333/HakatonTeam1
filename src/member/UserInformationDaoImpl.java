@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class UserInformationDaoImpl implements UserInformationDao {
 
-    private static final ArrayList<Member> memberList=new ArrayList<Member>();
+    public static ArrayList<Member> memberList=new ArrayList<Member>();
 
 
     @Override
@@ -32,4 +32,5 @@ public class UserInformationDaoImpl implements UserInformationDao {
         }
 
     }
+
 }
