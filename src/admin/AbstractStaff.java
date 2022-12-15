@@ -1,3 +1,7 @@
+package admin;
+
+import admin.Role;
+
 public abstract class AbstractStaff{
     private String surName;
     private String name;

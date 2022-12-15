@@ -1,10 +1,17 @@
-import member.Member;
+package admin;
+
+import admin.Admin;
 
 import java.util.*;
 
 public class Data {
     private static ArrayList<String> instruction = new ArrayList<>();
     private static Map<String,String> members = new HashMap<>();
+
+    public static Map<String, String> getMembers() {
+        return members;
+    }
+
     public static void addInstruction() {
         String text = Admin.addInstructions();
         instruction.add(text);

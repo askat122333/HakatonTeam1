@@ -1,12 +1,9 @@
-import member.Member;
-import member.UserInformationDao;
+package admin;
+
+import member.NewMember;
 import member.UserInformationDaoImpl;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Month;
 import java.util.*;
 
 public class Admin extends AbstractStaff {
@@ -69,12 +66,11 @@ public class Admin extends AbstractStaff {
     }
 
     public static void randomize() {
-        System.out.println(UserInformationDaoImpl.memberList.toString());
-        var memberList = UserInformationDaoImpl.memberList;
+        var memberList = UserInformationDaoImpl.newMemberList;
 
         List<String> employeesNames = new ArrayList<>();
-        for (Member member : memberList) {
-            employeesNames.add(member.getName());
+        for (NewMember newMember : memberList) {
+            employeesNames.add(newMember.getName());
         }
 
         List<String> santaList = new ArrayList<>();

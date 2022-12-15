@@ -1,56 +1,29 @@
 package member;
 
-import javax.management.relation.Role;
+import admin.Data;
 
-public class Member {
-    private String name;
-    private String password;
+import java.util.Scanner;
 
-    private String type;
-    public Member(){
-
+public class Member extends NewMember{
+    public Member() {
     }
 
     public Member(String type) {
-        this.type = type;
+        super(type);
     }
 
     public Member(String name, String password) {
-        this.name = name;
-        this.password = password;
-
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+        super(name, password);
     }
 
 
-    public String getType() {
-        return type;
-    }
+    public static void ShowReceiver(){
+        var members = Data.getMembers();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите свое имя ");
+        String name = scanner.next();
+        System.out.println(members.get(name));
 
-    public void setType(String type) {
-        this.type = type;
-    }
 
-    @Override
-    public String toString() {
-        return "Участник[" +
-                "Имя – " + name +
-                ", Категория желаемого подарка – " + type +
-                "]\n";
+            }
     }
-}

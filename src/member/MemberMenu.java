@@ -1,91 +1,40 @@
 package member;
 
+import admin.Admin;
+import admin.Data;
 import java.util.Scanner;
 
 
 public class MemberMenu {
     public static void main(Member member) {
-
-
-            UserInformationDao uid = new UserInformationDaoImpl();
-            System.out.println("Добро пожаловать в окно регистрации!");
-
-            Scanner in = new Scanner(System.in);
-
-
-            System.out.println("Введите ваш ник: ");
-            String name = in.next();
-            System.out.println("Введите ваш пароль: ");
-            String password = in.next();
-            Member member1 = new Member(name, password);
-
-
-            uid.regist(member1);
-
-            uid.makeANote("C:\\java\\listOfMembers.txt");
-            System.out.println("Регистрация прошла успешно!");
-            System.out.println("––––––––––––––––––––––––––––");
-            System.out.println("АНКЕТА");
-            System.out.println("––––––––––––––––––––––––––––");
-            System.out.println("Ваш Санта хочет узнать категорию вашего желаемого подарка! Желаете выбрать категорию? :)");
-            System.out.println("1) Да, я хочу выбрать категорию подарка");
-            System.out.println("2) Нет, я хочу получить сюрприз");
-            int command = in.nextInt();
-            if (command == 1) {
-                System.out.println("Санта хочет узнать вашу категорию товаров");
-                System.out.println("1) Техника");
-                System.out.println("2) Запоминающиеся");
-                System.out.println("3) Книги");
-                System.out.println("4) Цветы");
-                System.out.println("5) Еда");
-                System.out.println("6) Игрушки");
-                String number = in.next();
-                switch (number){
-                    case "1":
-                        String type1 = "Teхника";
-                        member1.setType(type1);
-                        System.out.println("Вы выбрали технику");
-                        uid.makeANote("C:\\java\\listOfMembers.txt");
-
-                        break;
-                    case "2":
-                        String type2 = "Запоминающиеся";
-                        member1.setType(type2);
-                        System.out.println("Вы выбрали запоминающиеся подарки");
-                        uid.makeANote("C:\\java\\listOfMembers.txt");
-                        break;
-                    case "3":
-                        String type3 = "Книги";
-                        member1.setType(type3);
-                        System.out.println("Вы выбрали книги");
-                        uid.makeANote("C:\\java\\listOfMembers.txt");
-                        break;
-                    case "4":
-                        String type4 = "Цветы";
-                        member1.setType(type4);
-                        System.out.println("Вы выбрали цветы");
-                        uid.makeANote("C:\\java\\listOfMembers.txt");
-
-                        break;
-                    case "5":
-                        String type5 = "Еда";
-                        member1.setType(type5);
-                        System.out.println("Вы выбрали вкусную еду");
-                        uid.makeANote("C:\\java\\listOfMembers.txt");
-                        break;
-                    case "6":
-                        String type6 = "Игрушки";
-                        member1.setType(type6);
-                        System.out.println("Вы выбрали игрушки");
-                        uid.makeANote("C:\\java\\listOfMembers.txt");
-                        break;
-
+        Scanner sc = new Scanner(System.in);
+        System.out.println("""
+                           МЕНЮ УЧАСТНИКА
+                    ––––––––––––––––––––––––––
+                    Пожалуйста, выберите действие:
+                    1) Логин
+                    2) пароль
+                    3) ваш получатель
+                    4) ваша желаемая категория подарка
+                    0) Выйти""");
+        int command = sc.nextInt();
+        switch (command) {
+            case 1 -> Data.addInstruction();
+            case 2 -> Admin.setMaxCost();
+            case 3 -> Member.ShowReceiver();
+            case 4 -> {
+                if(UserInformationDaoImpl.newMemberList.isEmpty()){
+                    System.out.println("Ошибка! Нет участников");
+                }else if (UserInformationDaoImpl.newMemberList.size() % 2 != 0){
+                    System.out.println("Нечётное количество участников!");
+                    System.out.println("Общее количество участников: " + UserInformationDaoImpl.newMemberList.size());
+                }else{
+                    Admin.randomize();
                 }
-            } else if (command == 2) {
-                System.out.println("Круто!");
             }
-
-
+            case 0 -> {
+                return;
+            }
         }
-
+    }
 }

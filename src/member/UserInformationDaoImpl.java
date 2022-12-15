@@ -6,12 +6,12 @@ import java.util.ArrayList;
 
 public class UserInformationDaoImpl implements UserInformationDao {
 
-    public static ArrayList<Member> memberList=new ArrayList<Member>();
+    public static ArrayList<NewMember> newMemberList =new ArrayList<NewMember>();
 
 
     @Override
-    public void regist(Member member) {
-        memberList.add(member);
+    public void regist(NewMember newMember) {
+        newMemberList.add(newMember);
     }
 
 
@@ -20,8 +20,8 @@ public class UserInformationDaoImpl implements UserInformationDao {
 
         try {
             FileWriter fileWriter = new FileWriter(fileName);
-            for (int i = 0; i < memberList.size(); i++) {
-                fileWriter.write(memberList.get(i).toString());
+            for (int i = 0; i < newMemberList.size(); i++) {
+                fileWriter.write(newMemberList.get(i).toString());
             }
             fileWriter.close();
 
