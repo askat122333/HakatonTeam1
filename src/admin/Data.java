@@ -10,6 +10,8 @@ public class Data {
 
     public static Map<String, String> getMembers() {
         return members;
+    } public static void setMembers(Map<String, String> map) {
+        members=map;
     }
 
     public static void addInstruction() {

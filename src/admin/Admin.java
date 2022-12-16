@@ -100,6 +100,7 @@ public class Admin extends AbstractStaff {
         for (Map.Entry<String, String> item : names.entrySet()) {
             System.out.println(item.getKey() + " дарит подарок -> " + item.getValue());
             System.out.println();
+            Data.setMembers(names);
         }
     }
 }

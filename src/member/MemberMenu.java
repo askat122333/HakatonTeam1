@@ -8,14 +8,14 @@ import java.util.Scanner;
 public class MemberMenu {
     public static void main(Member member) {
         Scanner sc = new Scanner(System.in);
+        System.out.println(Data.getMembers());
         System.out.println("""
                            МЕНЮ УЧАСТНИКА
                     ––––––––––––––––––––––––––
                     Пожалуйста, выберите действие:
-                    1) Логин
-                    2) пароль
-                    3) ваш получатель
-                    4) ваша желаемая категория подарка
+       
+                    1) ваш получатель
+                    2) ваша желаемая категория подарка
                     0) Выйти""");
         int command = sc.nextInt();
         switch (command) {

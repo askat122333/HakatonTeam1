@@ -22,7 +22,7 @@ public class RegistrationMenu {
 
             uid.regist(newMember1);
 
-            uid.makeANote("C:\\java\\listOfMembers.txt");
+            uid.makeANote("listOfMembers.txt");
             System.out.println("Регистрация прошла успешно!");
             System.out.println("––––––––––––––––––––––––––––");
             System.out.println("АНКЕТА");
@@ -45,43 +45,44 @@ public class RegistrationMenu {
                         String type1 = "Teхника";
                         newMember1.setType(type1);
                         System.out.println("Вы выбрали технику");
-                        uid.makeANote("C:\\java\\listOfMembers.txt");
+                        uid.makeANote("listOfMembers.txt");
 
                         break;
                     case "2":
                         String type2 = "Запоминающиеся";
                         newMember1.setType(type2);
                         System.out.println("Вы выбрали запоминающиеся подарки");
-                        uid.makeANote("C:\\java\\listOfMembers.txt");
+                        uid.makeANote("listOfMembers.txt");
                         break;
                     case "3":
                         String type3 = "Книги";
                         newMember1.setType(type3);
                         System.out.println("Вы выбрали книги");
-                        uid.makeANote("C:\\java\\listOfMembers.txt");
+                        uid.makeANote("listOfMembers.txt");
                         break;
                     case "4":
                         String type4 = "Цветы";
                         newMember1.setType(type4);
                         System.out.println("Вы выбрали цветы");
-                        uid.makeANote("C:\\java\\listOfMembers.txt");
+                        uid.makeANote("listOfMembers.txt");
 
                         break;
                     case "5":
                         String type5 = "Еда";
                         newMember1.setType(type5);
                         System.out.println("Вы выбрали вкусную еду");
-                        uid.makeANote("C:\\java\\listOfMembers.txt");
+                        uid.makeANote("listOfMembers.txt");
                         break;
                     case "6":
                         String type6 = "Игрушки";
                         newMember1.setType(type6);
                         System.out.println("Вы выбрали игрушки");
-                        uid.makeANote("C:\\java\\listOfMembers.txt");
+                        uid.makeANote("listOfMembers.txt");
                         break;
 
                 }
             } else if (command == 2) {
+                newMember1.setType("сюрпроиз");
                 System.out.println("Круто!");
             }
 

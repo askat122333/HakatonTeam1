@@ -30,9 +30,6 @@ public class AdminMenu {
                     System.out.println(UserInformationDaoImpl.newMemberList.toString());
                     if(UserInformationDaoImpl.newMemberList.isEmpty()){
                         System.out.println("Ошибка! Нет участников");
-                    }else if (UserInformationDaoImpl.newMemberList.size() % 2 != 0){
-                        System.out.println("Нечётное количество участников!");
-                        System.out.println("Общее количество участников: " + UserInformationDaoImpl.newMemberList.size());
                     }else{
                         Admin.randomize();
                     }

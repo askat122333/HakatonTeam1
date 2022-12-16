@@ -6,6 +6,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc  = new Scanner(System.in);
+        NewMember newMember1 = new NewMember("Sasha","1234");
+        newMember1.setType("Книги");
+        NewMember newMember2 = new NewMember("Masha","1234");
+        newMember2.setType("Игрушки");
+        NewMember newMember3 = new NewMember("Dasha","1234");
+        newMember3.setType("Машина");
+        NewMember newMember4 = new NewMember("Gena","1234");
+        newMember3.setType("Машина");
+
+        UserInformationDaoImpl.newMemberList.add(newMember1);
+        UserInformationDaoImpl.newMemberList.add(newMember2);
+        UserInformationDaoImpl.newMemberList.add(newMember3);
+        UserInformationDaoImpl.newMemberList.add(newMember4);
+
+
         while (true){
             System.out.println("""
                     
@@ -42,8 +57,6 @@ public class Main {
                             && UserInformationDaoImpl.newMemberList.get(i).getPassword().equals(password) ){
                         System.out.println("Добро пожаловать, " + name + "!");
                         MemberMenu.main(new Member());
-                    }else{
-                        System.out.println("Неверный логин или пароль!");
                         break;
                     }
                 }
