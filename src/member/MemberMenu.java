@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class MemberMenu {
     public static void main(Member member) {
         Scanner sc = new Scanner(System.in);
-        System.out.println(Data.getMembers());
-        System.out.println("""
+        while (true){
+            System.out.println("""
                            МЕНЮ УЧАСТНИКА
                     ––––––––––––––––––––––––––
                     Пожалуйста, выберите действие:
@@ -17,24 +17,18 @@ public class MemberMenu {
                     1) ваш получатель
                     2) ваша желаемая категория подарка
                     0) Выйти""");
-        int command = sc.nextInt();
-        switch (command) {
-            case 1 -> Data.addInstruction();
-            case 2 -> Admin.setMaxCost();
-            case 3 -> Member.ShowReceiver();
-            case 4 -> {
-                if(UserInformationDaoImpl.newMemberList.isEmpty()){
-                    System.out.println("Ошибка! Нет участников");
-                }else if (UserInformationDaoImpl.newMemberList.size() % 2 != 0){
-                    System.out.println("Нечётное количество участников!");
-                    System.out.println("Общее количество участников: " + UserInformationDaoImpl.newMemberList.size());
-                }else{
-                    Admin.randomize();
+            int command = sc.nextInt();
+            switch (command) {
+                case 1 -> Member.ShowReceiver();
+                case 2 -> Admin.getMaxCost();
+                case 0 -> {
+                    break;
                 }
             }
-            case 0 -> {
-                return;
+            if (command == 0 ){
+                break;
             }
         }
+
     }
 }
