@@ -2,7 +2,7 @@ package member;
 
 public interface UserInformationDao {
 
-    public abstract void regist(NewMember newMember);
+    void regist(NewMember newMember);
 
-    public  abstract void makeANote(String fileName);
+    void makeANote(String fileName);
 }

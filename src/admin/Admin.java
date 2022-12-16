@@ -47,7 +47,7 @@ public class Admin extends AbstractStaff {
         int time = scanner.nextInt();
         System.out.println("Выберите время (минут):");
         int minute = scanner.nextInt();
-        date = LocalDateTime.of(year, month,day, time,minute);
+        date = LocalDateTime.of(year, month, day, time, minute);
     }
 
     public static void getEndDate() {

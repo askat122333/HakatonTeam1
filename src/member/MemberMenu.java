@@ -2,18 +2,19 @@ package member;
 
 import admin.Admin;
 import admin.Data;
+
 import java.util.Scanner;
 
 
 public class MemberMenu {
     public static void main(Member member) {
         Scanner sc = new Scanner(System.in);
-        while (true){
+        while (true) {
             System.out.println("""
                            МЕНЮ УЧАСТНИКА
                     ––––––––––––––––––––––––––
                     Пожалуйста, выберите действие:
-       
+                           
                     1) ваш получатель
                     2) ваша желаемая категория подарка
                     0) Выйти""");
@@ -25,7 +26,7 @@ public class MemberMenu {
                     break;
                 }
             }
-            if (command == 0 ){
+            if (command == 0) {
                 break;
             }
         }

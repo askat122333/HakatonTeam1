@@ -2,7 +2,7 @@ package admin;
 
 import admin.Role;
 
-public abstract class AbstractStaff{
+public abstract class AbstractStaff {
     private String surName;
     private String name;
     private int age;
@@ -14,7 +14,9 @@ public abstract class AbstractStaff{
         this.age = age;
         this.role = role;
     }
-    public AbstractStaff(){}
+
+    public AbstractStaff() {
+    }
 
     public String getSurName() {
         return surName;

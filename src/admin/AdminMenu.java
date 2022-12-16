@@ -38,7 +38,7 @@ public class AdminMenu {
                 case 6 -> Admin.getMaxCost();
                 case 7 -> Admin.getEndDate();
             }
-            if (command == 0 ){
+            if (command == 0) {
                 break;
             }
         }

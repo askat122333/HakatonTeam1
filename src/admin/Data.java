@@ -6,12 +6,14 @@ import java.util.*;
 
 public class Data {
     private static ArrayList<String> instruction = new ArrayList<>();
-    private static Map<String,String> members = new HashMap<>();
+    private static Map<String, String> members = new HashMap<>();
 
     public static Map<String, String> getMembers() {
         return members;
-    } public static void setMembers(Map<String, String> map) {
-        members=map;
+    }
+
+    public static void setMembers(Map<String, String> map) {
+        members = map;
     }
 
     public static void addInstruction() {
@@ -25,7 +27,7 @@ public class Data {
         for (int i = 0; i < instruction.size(); i++) {
             if (instruction.get(i) != null) {
                 System.out.println(instruction.get(i));
-            }else if(instruction.get(i).isEmpty()){
+            } else if (instruction.get(i).isEmpty()) {
                 System.out.println("Нет инструкций");
             }
 

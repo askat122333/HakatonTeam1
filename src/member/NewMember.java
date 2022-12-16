@@ -6,7 +6,8 @@ public class NewMember {
     private String receiver;
 
     private String type;
-    public NewMember(){
+
+    public NewMember() {
 
     }
 
@@ -32,6 +33,7 @@ public class NewMember {
     public void setReceiver(String receiver) {
         this.receiver = receiver;
     }
+
     public String getName() {
         return name;
     }

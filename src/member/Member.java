@@ -4,7 +4,7 @@ import admin.Data;
 
 import java.util.Scanner;
 
-public class Member extends NewMember{
+public class Member extends NewMember {
     public Member() {
     }
 
@@ -17,7 +17,7 @@ public class Member extends NewMember{
     }
 
 
-    public static void ShowReceiver(){
+    public static void ShowReceiver() {
         var members = Data.getMembers();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите свое имя ");
@@ -25,5 +25,5 @@ public class Member extends NewMember{
         System.out.println(members.get(name));
 
 
-            }
     }
+}

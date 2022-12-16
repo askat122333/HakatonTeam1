@@ -13,7 +13,7 @@ public class Main {
         NewMember newMember3 = new NewMember("Dasha","1234");
         newMember3.setType("Машина");
         NewMember newMember4 = new NewMember("Gena","1234");
-        newMember3.setType("Машина");
+        newMember3.setType("Телефон");
 
         UserInformationDaoImpl.newMemberList.add(newMember1);
         UserInformationDaoImpl.newMemberList.add(newMember2);
